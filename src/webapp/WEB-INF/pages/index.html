@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<p><a href="/adduser">Добавить пользователя</a></p>
+<table border="1" cellpadding="5">
+    <th:block th:each="user:${listUsers}">
+        <tr>
+            <td th:text="${user.getName()}"></td>
+            <td th:text="${user.getLastName()}"></td>
+            <td th:text="${user.getAge()}"></td>
+            <td><a th:href="@{/editoruser(id=${user.getId()})}">Редактировать</a></td>
+            <td><a th:href="@{/delete(id=${user.getId()})}">Удалить</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
