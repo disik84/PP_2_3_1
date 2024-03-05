@@ -9,9 +9,8 @@ import web.model.User;
 
 import java.util.List;
 
-
 @Service
-public class UserServiceImp implements UserService{
+public class UserServiceImp implements UserService {
 
     UserDao userDao;
 
@@ -19,7 +18,6 @@ public class UserServiceImp implements UserService{
     public UserServiceImp(UserDao userDao) {
         this.userDao = userDao;
     }
-
 
     @Transactional
     @Override
