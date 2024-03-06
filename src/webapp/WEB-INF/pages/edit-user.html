@@ -7,7 +7,7 @@
 </head>
 <body>
 <p><a href="/">Список поользователей</a></p>
-<form th:action="@{/edit}" method="GET">
+<form th:action="@{/show-info-edit-user}" method="GET">
     <input type="hidden" id="id" name="id" th:value="${user.getId()}"/>
     <p>
         <label for="name">Имя</label>

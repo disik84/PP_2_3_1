@@ -46,7 +46,7 @@ public class AppConfig {
         return adapter;
     }
 
-    private Properties hibernateProperties() {
+    private Properties getHibernateProperties() {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", env.getRequiredProperty("hibernate.dialect"));
         properties.put("hibernate.show_sql", env.getRequiredProperty("hibernate.show_sql"));
@@ -62,7 +62,7 @@ public class AppConfig {
         lcefb.setDataSource(getDataSource());
         lcefb.setPersistenceUnitName("myJpaPersistenceUnit");
         lcefb.setPackagesToScan("web");
-        lcefb.setJpaProperties(hibernateProperties());
+        lcefb.setJpaProperties(getHibernateProperties());
         return lcefb;
     }
 
